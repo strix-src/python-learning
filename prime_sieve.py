@@ -19,7 +19,15 @@ def print_primes(result_list):
     print()
 
 if __name__=='__main__':
-    a=int(input("请输入数字:"))
+    while True:
+        try :    
+            a=int(input("请输入数字:"))
+            if a<2:
+                print("请输入大于2的整数")
+                continue
+            break
+        except ValueError:
+            print("请输入数字不是其他")
     result_list=isprime_sieve(a)
     print_primes(result_list)
     print(f"在{a}之内一共有{len(result_list)}个素数")
