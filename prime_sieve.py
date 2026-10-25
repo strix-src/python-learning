@@ -4,8 +4,7 @@ def isprime_sieve(a):
     isprime[0]=isprime[1]=False
     for i in range(2,int(a**0.5)+1):
         if isprime[i]:
-            for j in range(i*i,a+1,i):
-                isprime[j]=False
+            isprime[i*i:a+1:i]=[False]*len(range(i*i,a+1,i))
     primes=[i for i in range(2,a+1) if isprime[i]]
     return primes
 
@@ -27,7 +26,7 @@ if __name__=='__main__':
                 continue
             break
         except ValueError:
-            print("请输入数字不是其他")
+            print("输入无效，请输入纯数字!")
     result_list=isprime_sieve(a)
     print_primes(result_list)
     print(f"在{a}之内一共有{len(result_list)}个素数")
