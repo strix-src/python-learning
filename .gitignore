@@ -24,3 +24,6 @@ Thumbs.db
 # Misc
 *.log
 *.sqlite
+
+# Deliverables（交付物目录，不纳入版本管理）
+deliverables/
